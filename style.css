@@ -1,0 +1,443 @@
+:root{
+    --colorFondo: rgba(0, 0, 0, 0.75);
+    --textoPrincipal:3rem ;
+    --textoIntermedia:1.5rem;
+    --textoSecundaria:1.7rem ;
+
+    --fuentePrincipal: 'Permanent Marker', cursive;
+    --fuenteSecundaria: 'Josefin Sans', sans-serif;
+
+    --letraEspacioPrincipal:.4rem;
+    --letraEspacioSecundaria:.2rem;
+
+    --colorPrincipal: whitesmoke;
+    --colorSecundario: rgb(147, 148, 149);
+
+    --colorBarraB:#191a1a;
+    --colorBarraL:#262627;
+    --colorResaltado:red;
+
+    --colorRachaActiva: rgb(224, 122, 5);
+    --colorRachaNoActiva: rgb(85, 83, 83);
+
+    --tiempoAnimacion:.5s;
+    --tiempoAnimacion2:.33s;
+    --funcionAnimacion: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body{
+    background-image: url(./recursos/Photo/escritorio.jpg);
+    background-color: gainsboro;
+    background-size:cover;
+    background-repeat: no-repeat;
+    color: var(--colorPrincipal);
+    list-style: none;
+    font-family: var(--fuenteSecundaria);
+    letter-spacing: var(--letraEspacioSecundaria);
+}
+
+.capa{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--colorFondo);
+}
+
+
+/*                                                              Estilos aplicados a las dos barras de navegacion  */
+.barraBotones_lista, .barraNavegacion_lista{
+    height: 100vh;
+    color: var(--colorSecundario);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-evenly; 
+    list-style: none;
+}
+
+.barraBotones_lista li, .barraNavegacion_lista li{
+    height: 4rem;
+    padding:.5rem 0 ;
+    cursor: pointer;
+    transition: color var(--tiempoAnimacion2) linear;
+}
+
+.barraBotones_lista li:first-child , .barraNavegacion_lista li:first-child{
+    margin-bottom: 1rem;
+}
+
+.barraBotones_lista li:last-child, .barraNavegacion_lista li:last-child{
+    margin-top: 20rem;
+}
+
+.barraBotones_lista li svg:hover,.barraNavegacion_lista li:hover{
+    fill: var(--colorPrincipal);
+    color: var(--colorPrincipal);
+}
+
+
+/*                                                          BARRA DE NAVEGACION botones*/
+.barraBotones{
+    background-color: var(--colorBarraB);
+    /* background-color: red; */
+    height: 100vh;
+    width: 4.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.barraBotones_lista svg{
+    /* background-color: rebeccapurple; */
+    height: 2.2rem;
+    fill: var(--colorSecundario);
+    cursor: pointer;
+    transition: fill var(--tiempoAnimacion2) linear;
+}
+
+
+/*                                                      Barra de navegacion palabras */
+.barraNavegacion{
+    display: inline-block;
+    background-color: var(--colorBarraL);
+    height: 100vh;
+    width: 22rem;
+    position: fixed;
+    top: 0;
+    left: -22rem;    
+    overflow:hidden;  
+    transition: transform var(--tiempoAnimacion) var(--funcionAnimacion);;
+    z-index: 10;  
+}
+
+.barraNavegacion_lista{
+    align-items: flex-start;
+    font-size: var(--textoIntermedia);
+    text-align: right  ;
+    padding-left: 3rem;
+}
+
+
+#usuario{
+    /* background-color: red; */
+    font-family: var(--fuentePrincipal);
+    font-size: var(--textoPrincipal);
+    border: .2rem var(--colorSecundario) solid;
+    border-radius: .3rem;
+    color: var(--colorPrincipal);
+}
+
+.emergencia{
+    color: rgb(197, 4, 4);
+    text-transform: uppercase;
+}
+.barraNavegacion_lista .emergencia:hover{
+    color: var(--colorResaltado);
+}
+
+
+/*                                                 PARTE PRINCIPAL  */
+.cajaPrincipal{
+    display: inline-block;
+    /* background-color: yellow; */
+    height: 100vh;
+    width: 100vw;
+    padding: 1.5rem 7rem;
+    transition: opacity var(--tiempoAnimacion) var(--funcionAnimacion), background-color var(--tiempoAnimacion) var(--funcionAnimacion);
+}
+
+
+/*                                                 PARTE PRINCIPAL  #1 */
+.encabezado{
+    /* background-color: cyan; */
+    height: 30vh;
+    padding: .5rem 1rem;
+    width: 100%;
+}
+@keyframes opacity-easeInOutBounce {
+	0% {
+		opacity: 1;
+        transform: scale(1);
+	}
+
+	2% {
+		opacity: 0.99;
+        transform: scale(0.99);
+	}
+
+	4% {
+		opacity: 1;
+        transform: scale(1);
+	}
+
+	10% {
+		opacity: 0.97;
+        transform: scale(0.97);
+	}
+
+	14% {
+		opacity: 0.99;
+        transform: scale(0.99);
+	}
+
+	22% {
+		opacity: 0.88;
+        transform: scale(0.88);
+	}
+
+	32% {
+		opacity: 0.99;
+        transform: scale(0.99);
+	}
+
+	42% {
+		opacity: 0.6;
+        transform: scale(0.6);
+	}
+
+	50% {
+		opacity: 0.5;
+        transform: scale(0.5);
+	}
+
+	58% {
+		opacity: 0.4;
+        transform: scale(0.4);
+        /* transform: translateX(5rem); */
+	}
+
+	68% {
+		opacity: 0.01;
+        transform: scale(0.6);
+	}
+
+	78% {
+		opacity: 0.12;
+        transform: scale(0.3);
+        /* transform: translateX(-5rem); */
+	}
+
+	86% {
+		opacity: 0.01;
+        transform: scale(0.5);
+	}
+
+	90% {
+		opacity: 0.03;
+        transform: scale(0.6);
+	}
+
+	96% {
+		opacity: 0;
+        transform: scale(0.7);
+	}
+
+	98% {
+		opacity: 0.01;
+        transform: scale(0.88);
+	}
+
+	100% {
+		opacity: 0;
+        transform: scale(1);
+	}
+
+}
+.lema{
+    /* background-color: black; */
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--textoPrincipal);
+    margin: 0;
+    margin-bottom: 3rem;    
+}
+
+.fechaInicio{
+    /* background-color: red; */
+    text-align: end;
+    font-size: var(--textoSecundaria);
+    margin-bottom: 3rem;
+}
+
+.divContador{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;   
+    align-items: flex-end; 
+}
+
+.divContador_fuegoDias{
+    /* background-color: aliceblue; */
+    display: flex;
+    align-items: center;
+}
+
+.fuego{
+    fill: var(--colorRachaNoActiva);
+    display: inline-block;
+    height: 3.5rem;
+    transition: all 6s;
+}
+
+.contadorDias{
+    display: inline-block;
+    height: 3.5rem;
+    align-self: center;
+    /* background-color: red; */
+    font-size: 4rem;
+    color: var(--colorRachaNoActiva);
+    padding: 0rem 1.5rem ;
+    transition: all 6s;
+}
+.rachaActiva{
+    fill:var(--colorRachaActiva);
+    color:var(--colorRachaActiva);
+}
+.retosRestantes{
+    /* background-color: red;   */
+    font-size: var(--textoSecundaria);
+}
+.cumplidos{
+    transition: all var(--tiempoAnimacion);
+    color: var(--colorRachaNoActiva);
+}
+
+.total{
+    color: var(--colorRachaActiva);
+}
+
+/*                                                 PARTE PRINCIPAL  #2 */
+.cajaObjetivo{ 
+    display: flex;
+    /* background-color: rgb(137, 7, 137);  */
+    height: 45vh;
+    justify-content: flex-start;
+}
+
+.cajaObjetivo_formulario{
+    display: flex;
+    flex-direction: column;
+    /* background-color: brown; */
+    overflow: scroll;
+}
+/* seudo clase que personaliza la barra de desplasamiento */
+.cajaObjetivo_formulario::-webkit-scrollbar{ 
+    display: none;
+}
+
+.formulario{
+    padding: 1rem 5rem;
+    margin: .2rem 0rem;
+    font-size: var(--textoSecundaria);
+    display: flex;
+    align-items: center;
+    /* background-color: black; */
+}
+.objetivoTexto , .objetivoCheck{
+    cursor:pointer;
+    align-self: center;
+}
+
+.objetivoCheck {
+    width: 1.5rem;
+    height: 1.5rem;
+    outline: .2rem solid rgb(85, 84, 84);
+    accent-color: black;
+    margin-right: 1rem;
+}
+
+.cajaObjetivo > div:last-child{
+    background-color: rgb(9, 255, 0);
+    display: none;
+}
+
+
+/*                                                 PARTE PRINCIPAL  #3 */
+.frasesMotivacion{
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 18vh;
+    text-align: center;
+    font-size: var(--textoSecundaria);
+    margin-top: 1rem;
+}
+
+.frase{
+    /* background-color: red; */
+    font-family: var(--fuentePrincipal);
+    width: 50rem;
+    padding: 1rem;
+    border-bottom: .2rem solid whitesmoke;
+}
+.palabrasClave{
+    color: var(--colorRachaActiva);
+}
+
+
+
+/*                                                 CLASES QUE SE LE APLICAN CON JS */
+.aumenta{
+    transform: translateX(26.5rem);
+}
+.oscuro{
+    opacity: 0.4;
+    background-color:black ;
+}
+.color{
+    color: var(--colorRachaActiva);
+}
+.animacion{
+    animation: opacity-easeInOutBounce  2s  ;
+}
+.barraBotones_lista li svg.resaltado{
+    fill: var(--colorPrincipal);
+    color: var(--colorPrincipal);
+}
+
+
+.cajaObjetivo > div:last-child.editar{
+    display: inline-block;
+    background-color: red;
+    width: 4rem;
+    height: 100%;
+    border: .1rem solid blue;
+    border-radius: .5rem;
+}
+
+
+/*                                                PIE DE PAGINA DONDE ESTA LA INFORMACION */
+/* .pieApp{
+    background-color: black;
+    display: flex;
+    justify-content:space-between;
+    height: 8vh;
+    width: 95vw;
+    padding-left: 4vw;
+    font-size: 1.2rem;
+}
+
+.cajaPie1{
+    display: flex;
+    width: 40vw;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.cajaPie2{
+    display: flex;
+    width: 40vw;
+    justify-content: space-evenly;
+    align-items: center;
+} */
